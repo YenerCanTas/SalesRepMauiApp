@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SalesRep.MainPage">
+
+    <ScrollView>
+        <StackLayout Spacing="5">
+
+
+            <StackLayout  Spacing="2">
+                <Image Source="broker.png" WidthRequest="80" HeightRequest="80" />
+
+                <BoxView HeightRequest="3" Color="Black" HorizontalOptions="FillAndExpand"/>
+
+            </StackLayout>
+
+           
+
+            <StackLayout Orientation="Vertical" Spacing="5" Padding="7" HorizontalOptions="Center" >
+
+
+                <StackLayout Orientation="Horizontal" Spacing="13.5">
+                <Label Text="          Name"
+                       FontAttributes="Bold"
+                       
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"/>
+                <Entry x:Name="EntryName" Text=""
+                       WidthRequest="430"
+                       />
+                
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <Label Text="  Last Name"
+                       FontAttributes="Bold"
+                       VerticalTextAlignment="Center"/>
+                <Entry x:Name="EntryLastName" Text=""
+                       WidthRequest="430"/>
+            </StackLayout>
+
+
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <Label Text="        Tel. No."
+                       FontAttributes="Bold"
+                       VerticalTextAlignment="Center"/>
+                <Entry x:Name="EntryTelNo" Text=""
+                       WidthRequest="430"/>
+            </StackLayout>
+        
+
+        </StackLayout>
+            
+            <StackLayout Orientation="Horizontal" Spacing="50" HorizontalOptions="Center">
+                
+            
+            <StackLayout Orientation="Horizontal" >
+                
+                <RadioButton 
+                            GroupName="Gender"
+                            Content="Male"
+                             HorizontalOptions="Center"
+                               x:Name="MaleRadioButton" />
+                    
+                </StackLayout>
+                
+                <StackLayout Orientation="Horizontal">
+                    <RadioButton 
+                                GroupName="Gender"
+                                Content="Female"
+                                HorizontalOptions="Center" 
+                                 x:Name="FemaleRadioButton"/>
+                   
+                </StackLayout>
+            </StackLayout>
+
+
+            
+
+
+            <StackLayout Spacing="20">
+
+                <StackLayout  HorizontalOptions="Center" Spacing="30" >
+                    <Label Text="Interest to Cover"
+           FontAttributes="Bold"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center"  Spacing="50">
+
+                <StackLayout Orientation="Horizontal" >
+                <RadioButton 
+                    GroupName="Team"
+                    x:Name="BoatRadioButton"/>
+                <Image Source="boat.png" WidthRequest="50"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <RadioButton 
+                        GroupName="Team"
+                        x:Name="BankRadioButton"/>
+                    <Image Source="bank.png"
+                       WidthRequest="50"/>
+                </StackLayout>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center"  Spacing="50">
+
+                <StackLayout Orientation="Horizontal" >
+                    <RadioButton 
+                        GroupName="Team"
+                        x:Name="PaintRadioButton"/>
+                    <Image Source="paint.png" WidthRequest="50"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <RadioButton 
+                        GroupName="Team"
+                        x:Name="FootballRadioButton" />
+                    <Image Source="football.png"
+              WidthRequest="50"/>
+                </StackLayout>
+                
+                
+
+            </StackLayout>
+                <StackLayout BackgroundColor="DarkBlue">
+                    <StackLayout>
+                        <Button Text="ADD" FontAttributes="Bold" TextColor="Black" BackgroundColor="White" WidthRequest="70"
+                                Clicked="Add_Clicked"/>
+                    </StackLayout>
+                </StackLayout>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <ListView x:Name="Sales_Rep_View" HasUnevenRows="True" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Vertical" Spacing="5">
+
+                                    <StackLayout Orientation="Horizontal" Spacing="2">
+                                        <Label  Text="ID ="/>
+                                        <Label FontAttributes="Bold" Text="{Binding ID}"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" Spacing="2">
+                                        <Label  Text="Name ="/>
+                                        <Label FontAttributes="Bold" Text="{Binding Name}"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" Spacing="2">
+                                        <Label  Text="Last Name ="/>
+                                        <Label FontAttributes="Bold" Text="{Binding LastName}"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" Spacing="2">
+                                        <Label Text="Tel No ="/>
+                                        <Label FontAttributes="Bold" Text="{Binding TelNo}"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" Spacing="2">
+                                        <Label  Text="Gender ="/>
+                                        <Label FontAttributes="Bold" Text="{Binding Gender}"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" Spacing="2">
+                                        <Label  Text="Team ="/>
+                                        <Label FontAttributes="Bold" Text="{Binding Team}"/>
+                                        <BoxView BackgroundColor="Black"/>
+                                    </StackLayout>
+                                    <BoxView HeightRequest="3" Color="Black" HorizontalOptions="FillAndExpand"/>
+
+
+
+
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    
+                </ListView>
+                
+            </StackLayout>
+
+            <StackLayout >
+                <StackLayout BackgroundColor="DarkBlue">
+                    <Button Text="Show" TextColor="Black" FontAttributes="Bold" BackgroundColor="White" WidthRequest="70"
+                            Clicked="Show_Clicked"
+                            />
+                </StackLayout>
+            </StackLayout>
+
+
+
+
+        </StackLayout>
+
+    </ScrollView>
+
+</ContentPage>

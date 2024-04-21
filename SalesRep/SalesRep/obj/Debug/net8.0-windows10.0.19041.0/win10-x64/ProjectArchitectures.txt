@@ -1,0 +1,1 @@
+C:\Users\yener\source\repos\SalesRep\SalesRep\SalesRep.csproj;x64
